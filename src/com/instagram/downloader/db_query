@@ -1,0 +1,47 @@
+
+//instagram
+create table instagram(no number(4) primary key, name varchar2(100), link varchar2(100), type varchar2(10));
+select * from instagram;
+
+create sequence instagram_seq;
+select sequence_name, max_value, min_value, increment_by from user_sequences;
+
+ALTER SEQUENCE [instagram_seq] INCREMENT BY 1;
+
+insert into instagram values(1, '인도', 'https://www.instagram.com/p/BqBlSNMA1cJ/', 'jpg');
+insert into instagram values(2, '요가친구들', 'https://www.instagram.com/p/BqwjpO5AOgg/', 'jpg');
+insert into instagram values(3, '히말라야 트레킹', 'https://www.instagram.com/p/BrudteRgR0R/', 'mp4');
+insert into instagram values(4, '안나푸르나 정상', 'https://www.instagram.com/p/BrukAcEg7oi/', 'jpg');
+
+commit;
+
+delete from instagram;
+
+drop table instagram;
+drop sequence instagram_seq;
+
+ALTER SEQUENCE MY_SEQ INCREMENT BY 1;
+alert sequence instagram_seq increment by 1;
+
+
+//instagram_version
+create table instagram_version(version varchar(15), released date);
+select * from instagram_version;
+
+insert into instagram_version values('1.0.0', '2019-06-03');
+
+drop table instagram;
+
+commit;
+
+
+//instagram_path
+create table instagram_path(path varchar(200));
+insert into instagram_path values('C:/Users/user/Desktop');
+
+select * from instagram_version;
+
+commit;
+
+
+
